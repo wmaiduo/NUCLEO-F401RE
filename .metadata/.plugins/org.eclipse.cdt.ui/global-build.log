@@ -1,0 +1,31 @@
+21:18:08 **** Build of configuration Debug for project 1_GPIOInputOutput ****
+make -j12 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f401retx.d" -MT"Startup/startup_stm32f401retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f401retx.o" "../Startup/startup_stm32f401retx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "1_GPIOInputOutput.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\wmaid\OneDrive\Desktop\learning\NUCLEO-F401RE\1_GPIOInputOutput\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1_GPIOInputOutput.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 1_GPIOInputOutput.elf
+ 
+arm-none-eabi-size   1_GPIOInputOutput.elf 
+arm-none-eabi-objdump -h -S  1_GPIOInputOutput.elf  > "1_GPIOInputOutput.list"
+   text	   data	    bss	    dec	    hex	filename
+    668	      8	   1568	   2244	    8c4	1_GPIOInputOutput.elf
+Finished building: default.size.stdout
+ 
+Finished building: 1_GPIOInputOutput.list
+ 
+21:19:07 **** Incremental Build of configuration Debug for project 1_GPIOInputOutput ****
+make -j12 all 
+arm-none-eabi-size   1_GPIOInputOutput.elf 
+   text	   data	    bss	    dec	    hex	filename
+    668	      8	   1568	   2244	    8c4	1_GPIOInputOutput.elf
+Finished building: default.size.stdout
+ 
+21:20:31 **** Incremental Build of configuration Debug for project 1_GPIOInputOutput ****
+make -j12 all 
+arm-none-eabi-size   1_GPIOInputOutput.elf 
+   text	   data	    bss	    dec	    hex	filename
+    668	      8	   1568	   2244	    8c4	1_GPIOInputOutput.elf
+Finished building: default.size.stdout
+ 
