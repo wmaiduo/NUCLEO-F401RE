@@ -3,6 +3,7 @@
 	<name>1_GPIOInputOutput</name>
 	<comment></comment>
 	<projects>
+		<project>1_GPIOInputOutput</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
