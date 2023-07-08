@@ -1,0 +1,14 @@
+#include "stm32f4xx_hal.h"
+#include "../../Peripherals/Inc/uart.h"
+#include <stdio.h>
+
+int main(void){
+
+	uart_init();
+
+    while (1)
+    {
+    	printf("Hello");
+    	HAL_Delay(10);
+    }
+}

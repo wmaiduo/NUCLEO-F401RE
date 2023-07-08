@@ -1,0 +1,10 @@
+#include "stm32f4xx_hal.h"
+
+uint8_t buttonStatus;
+
+int main(void){
+
+    while (1)
+    {
+    }
+}

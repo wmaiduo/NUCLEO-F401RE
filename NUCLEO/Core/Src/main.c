@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdint.h>
+#include "stm32f4xx_hal.h"
+#include "../Peripherals/Inc/uart.h"
+
+int main(void){
+
+	HAL_Init();
+	uart_init();
+
+    while (1)
+    {
+//    	HAL_UART_Transmit(&huart2, (uint8_t *) message, 20, 100);
+    	printf("Printing ! \n\r");
+    	HAL_Delay(10);
+    }
+}

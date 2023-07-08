@@ -1,0 +1,3 @@
+uart.c:7:6:uart_init	1
+uart.c:33:5:uart_putchar	1
+uart.c:38:5:_write	2

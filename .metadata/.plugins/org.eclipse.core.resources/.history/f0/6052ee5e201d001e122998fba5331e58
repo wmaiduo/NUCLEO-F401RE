@@ -1,0 +1,42 @@
+#include "stm32f4xx_hal.h"
+#include "stdio.h"
+
+UART_HandleTypeDef huart2;
+
+void SystemClock_Config(void);
+void UART_Init(void);
+
+int main(void) {
+    HAL_Init();
+    SystemClock_Config();
+    UART_Init();
+
+    while (1) {
+        // Example usage of printf to transmit a message over UART
+        printf("UART message\n");
+        HAL_Delay(10);
+
+        // Your code...
+    }
+}
+
+void UART_Init(void) {
+    huart2.Instance = USART2;
+    huart2.Init.BaudRate = 115200;
+    huart2.Init.WordLength = UART_WORDLENGTH_8B;
+    huart2.Init.StopBits = UART_STOPBITS_1;
+    huart2.Init.Parity = UART_PARITY_NONE;
+    huart2.Init.Mode = UART_MODE_TX_RX;
+    huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+    huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+
+    if (HAL_UART_Init(&huart2) != HAL_OK) {
+        // UART initialization error handling
+        // Your code...
+    }
+}
+
+int _write(int file, char* ptr, int len) {
+    HAL_UART_Transmit(&huart2, (uint8_t*)ptr, len, HAL_MAX_DELAY);
+    return len;
+}

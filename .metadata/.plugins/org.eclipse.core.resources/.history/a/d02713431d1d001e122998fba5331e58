@@ -1,0 +1,11 @@
+#ifndef EXTI_H
+#define EXTI_H
+
+#define BTN_PORT	GPIOC
+#define BTN_PIN		GPIO_PIN_13
+
+void gpio_pc13_interrupt_init (void);
+void HAL_GPIO_EXTI_Callback(void);
+void EXTI15_10_IRQHandler(void);
+
+#endif

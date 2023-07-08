@@ -1,0 +1,43 @@
+#include "uart.h"
+#include "stm32f4xx_hal.h"
+
+// Modify the following lines according to your UART configuration
+#define UART_HANDLE huart2
+#define UART_TIMEOUT 1000
+
+extern UART_HandleTypeDef UART_HANDLE;
+
+void uart_init(void) {
+  // Add UART initialization code here if needed
+}
+
+int uart_putchar(int ch) {
+  HAL_UART_Transmit(&UART_HANDLE, (uint8_t*)&ch, 1, UART_TIMEOUT);
+  return ch;
+}
+
+int uart_getchar(void) {
+  uint8_t ch;
+  HAL_UART_Receive(&UART_HANDLE, &ch, 1, UART_TIMEOUT);
+  return ch;
+}
+
+int _write(int file, char* ptr, int len) {
+  int DataIdx;
+
+  for (DataIdx = 0; DataIdx < len; DataIdx++) {
+    uart_putchar(*ptr++);
+  }
+
+  return len;
+}
+
+int _read(int file, char* ptr, int len) {
+  int DataIdx;
+
+  for (DataIdx = 0; DataIdx < len; DataIdx++) {
+    *ptr++ = uart_getchar();
+  }
+
+  return len;
+}

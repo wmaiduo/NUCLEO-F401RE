@@ -1,0 +1,65 @@
+#include "../Inc/uart.h"
+
+#include "stm32f4xx_hal.h"
+
+// Modify the following lines according to your UART configuration
+#define UART_HANDLE huart2
+#define UART_TIMEOUT 1000
+
+UART_HandleTypeDef UART_HANDLE;
+
+void uart_init(void) {
+	GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+	__HAL_RCC_GPIOA_CLK_ENABLE();
+	__HAL_RCC_USART2_CL_ENABLE();
+
+	GPIO_InitStruct.Pin = GPIO_PIN2 | GPIO_PIN3;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Alternate = GPIO_AF7_USART2;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+
+	HAL_GPIO_Init(GPIOA, &GPIO_Init_Struct);
+
+	huart.Instance = USART2;
+	huart.Init.BaudRate = 115200;
+	huart.Init.WordLength = UART_WORDLENGTH_8B;
+	huart.Init.StopBits = UART_STOPBITS_1;
+	huart.Init.Parity = UART_PARITY_NONE;
+	huart.Init.Mode = UART_MODE_TX_RX;
+	huart.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+	huart.Init.OverSampling = UART_OVERSAMPLING_16;
+
+}
+
+int uart_putchar(int ch) {
+  HAL_UART_Transmit(&UART_HANDLE, (uint8_t*)&ch, 1, UART_TIMEOUT);
+  return ch;
+}
+
+int uart_getchar(void) {
+  uint8_t ch;
+  HAL_UART_Receive(&UART_HANDLE, &ch, 1, UART_TIMEOUT);
+  return ch;
+}
+
+int _write(int file, char* ptr, int len) {
+  int DataIdx;
+
+  for (DataIdx = 0; DataIdx < len; DataIdx++) {
+    uart_putchar(*ptr++);
+  }
+
+  return len;
+}
+
+int _read(int file, char* ptr, int len) {
+  int DataIdx;
+
+  for (DataIdx = 0; DataIdx < len; DataIdx++) {
+    *ptr++ = uart_getchar();
+  }
+
+  return len;
+}
