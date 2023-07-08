@@ -1,21 +1,22 @@
-13:39:44 **** Incremental Build of configuration Debug for project 1_GPIOInputOutput ****
+16:43:59 **** Incremental Build of configuration Debug for project 1_GPIOInputOutput ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Peripherals/Src/tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Peripherals/Src/tim.d" -MT"Core/Peripherals/Src/tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Peripherals/Src/tim.o"
 arm-none-eabi-gcc -o "1_GPIOInputOutput.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\wmaid\OneDrive\Desktop\learning\NUCLEO-F401RE\NUCLEO\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1_GPIOInputOutput.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: 1_GPIOInputOutput.elf
  
 arm-none-eabi-size   1_GPIOInputOutput.elf 
 arm-none-eabi-objdump -h -S  1_GPIOInputOutput.elf  > "1_GPIOInputOutput.list"
    text	   data	    bss	    dec	    hex	filename
-  10244	    120	   1656	  12020	   2ef4	1_GPIOInputOutput.elf
+  11704	    120	   1728	  13552	   34f0	1_GPIOInputOutput.elf
 Finished building: default.size.stdout
  
 Finished building: 1_GPIOInputOutput.list
  
-13:39:47 **** Incremental Build of configuration Debug for project 1_GPIOInputOutput ****
+16:44:03 **** Incremental Build of configuration Debug for project 1_GPIOInputOutput ****
 make -j12 all 
 arm-none-eabi-size   1_GPIOInputOutput.elf 
    text	   data	    bss	    dec	    hex	filename
-  10244	    120	   1656	  12020	   2ef4	1_GPIOInputOutput.elf
+  11704	    120	   1728	  13552	   34f0	1_GPIOInputOutput.elf
 Finished building: default.size.stdout
  

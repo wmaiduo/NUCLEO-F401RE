@@ -1,0 +1,9 @@
+2023-07-06 19:14:07,872 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2023-07-06 19:14:12,229 [INFO] ProjectBuilder:4505 - Time for Generating toolchain IDE Files: 5952mS.
+2023-07-06 19:14:12,229 [INFO] ProjectBuilder:2867 - Time for Copy CMSIS : 0mS.
+2023-07-06 19:14:12,232 [INFO] ProjectBuilder:2867 - Time for Copy CMSIS : 0mS.
+2023-07-06 19:14:13,178 [INFO] McuFinderGlobals:66 - Set McuFinderConnectedMode to true
+2023-07-06 19:14:13,178 [INFO] ApiDb:448 - Save user favorites file C:\Users\wmaid/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2023-07-06 19:14:13,182 [INFO] ApiDb:452 - User favorites MCUs=[]
+2023-07-06 19:14:13,182 [INFO] ApiDb:448 - Save user favorites file C:\Users\wmaid/.stm32cubeide/favorites.boards.txt: 1 item(s)
+2023-07-06 19:14:13,182 [INFO] ApiDb:452 - User favorites Boards=[STM32F407G-DISC1]

@@ -7,16 +7,19 @@
 C_SRCS += \
 ../Core/Peripherals/Src/exti.c \
 ../Core/Peripherals/Src/led.c \
+../Core/Peripherals/Src/tim.c \
 ../Core/Peripherals/Src/uart.c 
 
 OBJS += \
 ./Core/Peripherals/Src/exti.o \
 ./Core/Peripherals/Src/led.o \
+./Core/Peripherals/Src/tim.o \
 ./Core/Peripherals/Src/uart.o 
 
 C_DEPS += \
 ./Core/Peripherals/Src/exti.d \
 ./Core/Peripherals/Src/led.d \
+./Core/Peripherals/Src/tim.d \
 ./Core/Peripherals/Src/uart.d 
 
 
@@ -27,7 +30,7 @@ Core/Peripherals/Src/%.o Core/Peripherals/Src/%.su Core/Peripherals/Src/%.cyclo:
 clean: clean-Core-2f-Peripherals-2f-Src
 
 clean-Core-2f-Peripherals-2f-Src:
-	-$(RM) ./Core/Peripherals/Src/exti.cyclo ./Core/Peripherals/Src/exti.d ./Core/Peripherals/Src/exti.o ./Core/Peripherals/Src/exti.su ./Core/Peripherals/Src/led.cyclo ./Core/Peripherals/Src/led.d ./Core/Peripherals/Src/led.o ./Core/Peripherals/Src/led.su ./Core/Peripherals/Src/uart.cyclo ./Core/Peripherals/Src/uart.d ./Core/Peripherals/Src/uart.o ./Core/Peripherals/Src/uart.su
+	-$(RM) ./Core/Peripherals/Src/exti.cyclo ./Core/Peripherals/Src/exti.d ./Core/Peripherals/Src/exti.o ./Core/Peripherals/Src/exti.su ./Core/Peripherals/Src/led.cyclo ./Core/Peripherals/Src/led.d ./Core/Peripherals/Src/led.o ./Core/Peripherals/Src/led.su ./Core/Peripherals/Src/tim.cyclo ./Core/Peripherals/Src/tim.d ./Core/Peripherals/Src/tim.o ./Core/Peripherals/Src/tim.su ./Core/Peripherals/Src/uart.cyclo ./Core/Peripherals/Src/uart.d ./Core/Peripherals/Src/uart.o ./Core/Peripherals/Src/uart.su
 
 .PHONY: clean-Core-2f-Peripherals-2f-Src
 

@@ -1,0 +1,2 @@
+../Core/Peripherals/Src/tim.c:16:6:tim_timebase_init	16	static
+../Core/Peripherals/Src/tim.c:34:6:TIM3_IRQHandler	8	static

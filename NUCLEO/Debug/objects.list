@@ -1,5 +1,6 @@
 "./Core/Peripherals/Src/exti.o"
 "./Core/Peripherals/Src/led.o"
+"./Core/Peripherals/Src/tim.o"
 "./Core/Peripherals/Src/uart.o"
 "./Core/Src/main.o"
 "./Core/Src/stm32f4xx_hal_msp.o"

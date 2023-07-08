@@ -11,5 +11,6 @@ void pa5_led_init(void){
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
 	HAL_GPIO_Init(LED_PORT, &GPIO_InitStruct);
-
 }
+
+
