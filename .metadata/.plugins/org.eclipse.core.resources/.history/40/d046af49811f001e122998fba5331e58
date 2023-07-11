@@ -1,0 +1,18 @@
+#include "stm32f4xx_hal.h"
+
+ADC_HandleTypeDef hadcl;
+
+void adc_continuous_conv_init(void){
+	//configure pc0 as analog pin
+	GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+	__HAL_RCC_GPIOA_CLK_ENABLE();
+
+	GPIO_InitStruct.Pin = GPIO_PIN_0;
+	GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+	//configure ADC module for continuous conversion
+	__HAL_RCC_ADC1_CLK_ENABLE();
+}

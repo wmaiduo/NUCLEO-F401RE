@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdint.h>
+#include <inttypes.h>
+#include "stm32f4xx_hal.h"
+#include "../Peripherals/Inc/uart.h"
+#include "../Peripherals/Inc/led.h"
+#include "../Peripherals/Inc/exti.h"
+#include "../Peripherals/Inc/tim.h"
+#include "../Peripherals/Inc/adc.h"
+
+
+uint32_t sensor_value;
+
+int main(void){
+
+	HAL_Init();
+	uart_init();
+//	tim_timebase_init();
+	adc_init_start();
+
+	uint32_t value;
+
+    while (1)
+    {
+    	value = pa0_adc_read();
+    	printf("%" PRIu32 ": number\n\r", value);
+    	HAL_Delay(10);
+    }
+}

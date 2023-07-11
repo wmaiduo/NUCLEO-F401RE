@@ -1,0 +1,7 @@
+#include "stm32f4xx_hal.h"
+
+void adc_continuous_conv_init(void){
+	//configure pc0 as analog pin
+	__HAL_RCC_GPIOA_CLK_ENABLE();
+	//configure adc module for continuous conversion
+}

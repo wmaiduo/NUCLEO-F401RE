@@ -1,0 +1,3 @@
+../Core/Peripherals/Src/adc_single_conversion.c:6:10:pa0_adc_single_conversion_read	8	static
+../Core/Peripherals/Src/adc_single_conversion.c:10:13:adc_continuous_conv_init	56	static
+../Core/Peripherals/Src/adc_single_conversion.c:45:6:adc_single_conversion_init_start	8	static
