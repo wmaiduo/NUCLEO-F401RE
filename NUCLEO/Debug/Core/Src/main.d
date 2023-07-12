@@ -34,6 +34,7 @@ Core/Src/main.o: ../Core/Src/main.c \
  ../Core/Src/../Peripherals/Inc/led.h \
  ../Core/Src/../Peripherals/Inc/exti.h \
  ../Core/Src/../Peripherals/Inc/tim.h \
+ ../Core/Src/../Peripherals/Inc/adc.h \
  ../Core/Src/../Peripherals/Inc/adc_single_conversion.h
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -70,4 +71,5 @@ Core/Src/main.o: ../Core/Src/main.c \
 ../Core/Src/../Peripherals/Inc/led.h:
 ../Core/Src/../Peripherals/Inc/exti.h:
 ../Core/Src/../Peripherals/Inc/tim.h:
+../Core/Src/../Peripherals/Inc/adc.h:
 ../Core/Src/../Peripherals/Inc/adc_single_conversion.h:

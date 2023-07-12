@@ -6,7 +6,7 @@
 #include "../Peripherals/Inc/led.h"
 #include "../Peripherals/Inc/exti.h"
 #include "../Peripherals/Inc/tim.h"
-//#include "../Peripherals/Inc/adc.h"
+#include "../Peripherals/Inc/adc.h"
 #include "../Peripherals/Inc/adc_single_conversion.h"
 
 ADC_HandleTypeDef hadc2;
@@ -18,14 +18,19 @@ int main(void){
 	uart_init();
 //	tim_timebase_init();
 	adc_single_conversion_init_start();
+	gpio_pc13_interrupt_init();
+	adc_init_start();
+	pa5_led_init();
 
-	uint32_t value;
+//	uint32_t value;
 
     while (1)
     {
-    	HAL_ADC_Start(&hadc2);
-    	HAL_ADC_PollForConversion(&hadc2, 1);
-    	value = pa0_adc_single_conversion_read();
-    	printf("%" PRIu32 ": number \n", value);
+//    	HAL_ADC_Start(&hadc2);
+//    	HAL_ADC_PollForConversion(&hadc2, 1);
+//    	value = pa0_adc_single_conversion_read();
+//    	printf("%" PRIu32 ": number \n", value);
+    	printf("hello! \n\r");
+    	HAL_Delay(3000);
     }
 }

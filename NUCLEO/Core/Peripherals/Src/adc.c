@@ -5,18 +5,18 @@ ADC_HandleTypeDef hadc1;
 
 
 
-uint32_t pa0_adc_read(void){
+uint32_t pa5_adc_read(void){
 	return HAL_ADC_GetValue(&hadc1);
 };
 
-static void adc_continuous_conv_init(void){
+void adc_init_start(void){
 	//configure pc0 as analog pin
 	GPIO_InitTypeDef GPIO_InitStruct = {0};
 	ADC_ChannelConfTypeDef sConfig = {0};
 
 	__HAL_RCC_GPIOA_CLK_ENABLE();
 
-	GPIO_InitStruct.Pin = GPIO_PIN_0;
+	GPIO_InitStruct.Pin = ADC_PIN;
 	GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
 	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
@@ -44,7 +44,6 @@ static void adc_continuous_conv_init(void){
 	HAL_ADC_ConfigChannel(&hadc1, &sConfig);
 }
 
-void adc_init_start(void){
-	adc_continuous_conv_init();
-	HAL_ADC_Start(&hadc1);
-}
+void ADC1_IRQHandler(void){
+	HAL_ADC_IRQHandler(&hadc1);
+};

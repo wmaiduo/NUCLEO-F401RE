@@ -1,3 +1,3 @@
-../Core/Peripherals/Src/adc.c:8:10:pa0_adc_read	8	static
-../Core/Peripherals/Src/adc.c:12:13:adc_continuous_conv_init	56	static
-../Core/Peripherals/Src/adc.c:47:6:adc_init_start	8	static
+../Core/Peripherals/Src/adc.c:8:10:pa5_adc_read	8	static
+../Core/Peripherals/Src/adc.c:12:6:adc_init_start	56	static
+../Core/Peripherals/Src/adc.c:47:6:ADC1_IRQHandler	8	static

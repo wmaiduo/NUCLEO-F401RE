@@ -1,3 +1,5 @@
-adc_single_conversion.c:6:10:pa0_adc_single_conversion_read	1
-adc_single_conversion.c:10:13:adc_continuous_conv_init	1
-adc_single_conversion.c:45:6:adc_single_conversion_init_start	1
+adc_single_conversion.c:9:10:pa0_adc_single_conversion_read	1
+adc_single_conversion.c:13:13:adc_continuous_conv_init	1
+adc_single_conversion.c:48:6:adc_single_conversion_init_start	1
+adc_single_conversion.c:53:6:HAL_ADC_ConvCpltCallback	1
+adc_single_conversion.c:59:6:ADC2_IRQHandler	1

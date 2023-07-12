@@ -1,3 +1,6 @@
+#include <inttypes.h>
+#include <stdio.h>
+
 #include "stm32f4xx_hal.h"
 #include "../Inc/adc.h"
 
@@ -45,4 +48,15 @@ static void adc_continuous_conv_init(void){
 void adc_single_conversion_init_start(void){
 	adc_continuous_conv_init();
 	HAL_ADC_Start(&hadc2);
-}
+};
+
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
+	uint32_t sensor_value;
+	sensor_value = pa0_adc_single_conversion_read();
+	printf("%" PRIu32 ": number \n", sensor_value);
+};
+
+void ADC2_IRQHandler(void){
+	HAL_ADC_IRQHandler(&hadc2);
+};
+
