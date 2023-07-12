@@ -44,6 +44,6 @@ void adc_init_start(void){
 	HAL_ADC_ConfigChannel(&hadc1, &sConfig);
 }
 
-void ADC1_IRQHandler(void){
-	HAL_ADC_IRQHandler(&hadc1);
-};
+//void ADC_IRQHandler(void){
+//	HAL_ADC_IRQHandler(&hadc1);
+//};

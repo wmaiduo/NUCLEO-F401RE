@@ -1,0 +1,4 @@
+uart_interrupt.c:7:6:uart_IRQ_init	1
+uart_interrupt.c:36:6:USART1_IRQHandler	1
+uart_interrupt.c:45:6:HAL_UART_TxCpltCallback	1
+uart_interrupt.c:49:6:HAL_UART_RxCpltCallback	1

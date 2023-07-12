@@ -1,4 +1,4 @@
-#include <inttypes.h>
+ #include <inttypes.h>
 #include <stdio.h>
 
 #include "stm32f4xx_hal.h"
@@ -43,6 +43,9 @@ static void adc_continuous_conv_init(void){
 	sConfig.SamplingTime = ADC_SAMPLETIME_480CYCLES;
 
 	HAL_ADC_ConfigChannel(&hadc2, &sConfig);
+
+	NVIC_SetPriority(ADC_IRQn, 0);
+	NVIC_EnableIRQ(ADC_IRQn);
 }
 
 void adc_single_conversion_init_start(void){
@@ -56,7 +59,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 	printf("%" PRIu32 ": number \n", sensor_value);
 };
 
-void ADC2_IRQHandler(void){
+void ADC_IRQHandler(void){
 	HAL_ADC_IRQHandler(&hadc2);
 };
 

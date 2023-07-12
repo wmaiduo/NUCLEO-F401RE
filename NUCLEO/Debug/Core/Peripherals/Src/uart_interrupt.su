@@ -1,0 +1,4 @@
+../Core/Peripherals/Src/uart_interrupt.c:7:6:uart_IRQ_init	40	static
+../Core/Peripherals/Src/uart_interrupt.c:36:6:USART1_IRQHandler	8	static
+../Core/Peripherals/Src/uart_interrupt.c:45:6:HAL_UART_TxCpltCallback	16	static
+../Core/Peripherals/Src/uart_interrupt.c:49:6:HAL_UART_RxCpltCallback	16	static
